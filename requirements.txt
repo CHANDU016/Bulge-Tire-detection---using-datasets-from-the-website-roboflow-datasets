@@ -1,4 +1,3 @@
-ultralytics>=8.0.20
-torch>=1.10
-opencv-python
+ultralytics
 gradio
+pillow
