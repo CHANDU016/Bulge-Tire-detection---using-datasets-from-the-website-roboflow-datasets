@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 4
+names: ['Bulge', 'Cracks', 'Flat spots', 'Non-defective']
+
+roboflow:
+  workspace: tyre-defect
+  project: tyre-defect-detection
+  version: 10
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/tyre-defect/tyre-defect-detection/dataset/10
