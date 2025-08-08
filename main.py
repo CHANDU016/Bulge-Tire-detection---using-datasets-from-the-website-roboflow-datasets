@@ -4,18 +4,14 @@ import os
 import uuid
 
 # Load YOLOv8 model
-model = YOLO("best.pt")  # Make sure this path is correct
+model = YOLO("best.pt")  # Ensure this path is correct
 
 # Prediction function
 def detect_defects(image):
-    # Save the input image temporarily
     input_path = f"temp_{uuid.uuid4()}.jpg"
     image.save(input_path)
 
-    # Run YOLO detection
     results = model(input_path)
-
-    # Save the output image
     output_path = f"result_{uuid.uuid4()}.jpg"
     results[0].save(filename=output_path)
 
@@ -31,5 +27,6 @@ demo = gr.Interface(
 )
 
 if __name__ == "__main__":
-    demo.launch()
-
+    # ✅ Get port from environment for Render
+    port = int(os.environ.get("PORT", 10000))
+    demo.launch(server_name="0.0.0.0", server_port=port)
