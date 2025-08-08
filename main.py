@@ -4,7 +4,7 @@ import os
 import uuid
 
 # Load YOLOv8 model
-model = YOLO("best.pt")  # Ensure this path is correct
+model = YOLO("best.pt")
 
 # Prediction function
 def detect_defects(image):
@@ -27,6 +27,6 @@ demo = gr.Interface(
 )
 
 if __name__ == "__main__":
-    # ✅ Get port from environment for Render
+    # Get port from environment for Render
 
     demo.launch(server_name="127.0.0.1", server_port=7860)
